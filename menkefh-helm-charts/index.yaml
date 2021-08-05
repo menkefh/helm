@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  elasticcchmc:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-08-05T09:46:01.027532-04:00"
+    description: A Helm chart for Kubernetes
+    digest: a2350069d678265cb7ffbf4446f43500b401cc93130a6529178ea892a849995e
+    name: elasticcchmc
+    type: application
+    urls:
+    - https://menkefh.github.io/menkefh-helm-charts/elasticcchmc-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-08-05T09:46:01.026044-04:00"
