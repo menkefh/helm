@@ -9,6 +9,6 @@ entries:
     name: elasticcchmc
     type: application
     urls:
-    - https://menkefh.github.io/menkefh-helm-charts/elasticcchmc-0.1.0.tgz
+    - https://menkefh.github.io/helm/menkefh-helm-charts/elasticcchmc-0.1.0.tgz
     version: 0.1.0
 generated: "2021-08-05T09:46:01.026044-04:00"
