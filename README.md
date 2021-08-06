@@ -1,6 +1,36 @@
-## Notes on using ingress on a local cluster
-[remove the webhook if you get an error adding the ingress rules](https://stackoverflow.com/questions/61365202/nginx-ingress-service-ingress-nginx-controller-admission-not-found)
+## TLDR;
+```
+helm % helm install --namespace "graylog" -n "graylog" kong-z/graylog --set graylog.externalUri=<<externalname>> --set graylog.image.repository=graylog/graylog:<<latest version i.e 4.0.9>> --generate-name
+```
 
+## Post install
+1. you can find the generated name in the
+ "Output generated from the helm install command"
+
+2. run the echo "User...." etc. from the output to get teh graylog admin password.
+
+
+3. modify ingress service to point to:
+ graylog-xxxxxxxxxx
+  generated name
+
+## To upgrade
+```
+helm upgrade graylog-1628189340 --set name=1628189340 --namespace "graylog" -n "graylog" kong-z/graylog --set graylog.image.repository=graylog/graylog:<<version>>  --set graylog.externalUri=<<external ip/name>> --set graylog.replicas=3
+```
+You may need to scale your stateful sets to more than one
+mongodb
+mongodb-arbiter
+elasticsearch-data
+elasticsearch-master
+## Notes on using on a local cluster
+
+1. You may need to do a docker login and docker pull graylog/graylog:<<version you want>> to get the image first
+
+[remove the webhook if you get an error adding the ingress rules](https://stackoverflow.com/questions/61365202/nginx-ingress-service-ingress-nginx-controller-admission-not-found)
+```
+kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission
+```
 You can use the [editor on GitHub](https://github.com/menkefh/helm/edit/gh-pages/README.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
