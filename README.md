@@ -1,4 +1,5 @@
-## Welcome to GitHub Pages
+## Notes on using ingress on a local cluster
+[remove the webhook if you get an error adding the ingress rules](https://stackoverflow.com/questions/61365202/nginx-ingress-service-ingress-nginx-controller-admission-not-found)
 
 You can use the [editor on GitHub](https://github.com/menkefh/helm/edit/gh-pages/README.md) to maintain and preview the content for your website in Markdown files.
 
